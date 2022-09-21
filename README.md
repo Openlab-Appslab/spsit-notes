@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Clone the repo
 
 ```shell
-git clone https://github.com/bryanforbes/intern-angular
+https://github.com/Openlab-Appslab/spsit-notes.git
 cd intern-angular
 ```
 
