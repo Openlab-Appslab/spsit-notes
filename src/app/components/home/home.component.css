@@ -16,3 +16,23 @@
     align-items: center;
     padding-top: 0.5em;
 }
+
+.center {
+    display: flex;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.selects {
+    display: flex;
+}
+select {
+    margin: 0.5em;
+}
