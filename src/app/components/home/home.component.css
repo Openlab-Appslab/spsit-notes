@@ -1,0 +1,38 @@
+.notes {
+    display: flex;
+    justify-content: space-evenly;
+    align-items:stretch;
+    flex-wrap: wrap;
+    text-align: center;
+    padding: 10px; 
+}
+
+
+.note img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5em;
+}
+
+.center {
+    display: flex;
+}
+
+.modal{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.selects {
+    display: flex;
+}
+select {
+    margin: 0.5em;
+}
