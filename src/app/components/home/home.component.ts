@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { finalize, Subscription } from 'rxjs';
 import { Note } from 'src/app/classes/note';
 
 
@@ -30,15 +31,29 @@ export class HomeComponent implements OnInit {
   ]
 
   fileName = '';
-
+  uploadProgress: number;
+  uploadSub: Subscription;
+  
   onFileSelected(event: any) {
-
+    
     const file: File = event.target.files[0];
-
+    
     if (file) {
       this.fileName = file.name;
       const formData = new FormData();
       formData.append('tumbnail', file, );
+
+      const upload$ = this.http.post("/api/thumbnail-upload", formData, {
+        reportProgress: true,
+        observe: 'events'
+    })
+
+      this.uploadSub = upload$.subscribe(event => {
+        if(event.type === HttpEventType.UploadProgress) {
+          const total: any = event.total;
+          this.uploadProgress = Math.round(event.loaded / total * 100);
+        }
+      })
 
     }
   }

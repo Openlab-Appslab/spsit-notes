@@ -78,7 +78,11 @@
             <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
         </div>
 
-        {{fileName  || "No file uploaded yet. "}}
+        <h3 style="color: white;">{{fileName  || "No file uploaded yet. "}}</h3>
+        <br>
+        <progress id="file" class="progress-bar" [value]="uploadProgress" *ngIf="uploadProgress && uploadProgress < 100" max="100" style="background-color: red;"> </progress>
+        
+  
 
         <input id="dropzone-file" type="file" class="hidden" (change)="onFileSelected($event)" (click)="fileUpload.click()" #fileUpload>
     </label>
